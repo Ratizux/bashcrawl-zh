@@ -1,17 +1,17 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# 如果您在阅读这句话，您就已经跨越游戏本身的界限，
+# 而正在阅读着驱动游戏运行的代码了。
 #
-#                    Congratulations!
+#                              祝贺你！
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# 学习 Linux 完全是为了满足好奇心，您可以阅读一下这段代码，
+# 看看能不能搞清它的作用机理。
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
+# 然而要是准备好继续游戏了，就要继续阅读卷轴（scroll）。如果在哪卡住了，
+# 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
+#
+#
 
 echo "You see a glowing red button with what appears to
       be an arrow pointing down inscribed on its face."

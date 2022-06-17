@@ -1,14 +1,14 @@
 
-# Illusions are strong here.
-# It is difficult to tell what is a doorway and what is an object.
+# 这里的幻术十分强烈。
+# 哪是门、哪是物体，现在已经被幻术搞得分不清了。
 #
-# The magic spell you use to look can be augmented.
+# 不过你用来观察四周的魔咒还能再加强一下。
 #
-# From now on, cast your spell like this:
+# 从现在开始，这样释放魔咒：
 # 
 # ls -F
 # 
-# Directories (the rooms of these catacombs) end with a / symbol.
+# 以“/”结尾的都是目录（地下墓穴中的房间）。
 # 
-# Encounters (programs) end with a * symbol.
+# “奇遇”（也就是程序）则总是以“*”结尾。
 

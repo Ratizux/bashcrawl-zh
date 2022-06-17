@@ -1,29 +1,29 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# 如果您在阅读这句话，您就已经跨越游戏本身的界限，
+# 而正在阅读着驱动游戏运行的代码了。
 #
-#                    Congratulations!
+#                              祝贺你！
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# 学习 Linux 完全是为了满足好奇心，您可以阅读一下这段代码，
+# 看看能不能搞清它的作用机理。
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# 然而要是准备好继续游戏了，就要继续阅读卷轴（scroll）。如果在哪卡住了，
+# 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
+#
 #
 
 if ! grep -Po amulet <<< $I &> /dev/null; then
     printf "\n"
-    echo "You have found an emerald **amulet**!"
+    echo "你发现了一件绿宝石制的 **amulet** （护身符）！"
     printf "\n"
-    echo "To collect treasure, you must have a variable to hold your inventory."
+    echo "要想收集宝藏，必须得有个能存储物品的“变量”（varible）。"
     printf "\n"
-    echo "Create a variable and add your treasure to it like this:"
+    echo "创建一个变量，把你发现的宝藏这样存进去："
     printf "\n"
     echo "export I=amulet,\$I"
     printf "\n"
-    echo "You can always check your wealth with this command:"
+    echo "无论何时，你都可以用下面这条命令查看物品栏："
     printf "\n"
     echo "echo \$I"
     printf "\n"
@@ -31,7 +31,7 @@ if ! grep -Po amulet <<< $I &> /dev/null; then
     mv ../.vault ../vault 2>/dev/null
     mv ../.scrap ../scrap 2>/dev/null
 else
-    echo "This treasure has already been taken."
+    echo "宝藏已经被取走了。"
 fi
 
 
@@ -307,8 +307,8 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Try moving into the armoury, maybe you
-# can come back to this treasure later!
+# 唔，这操作行不通啊。
+# 先进入宝库（armoury）吧，或许待会你还能回来取这里的宝藏呢！
+
 
 

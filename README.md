@@ -1,35 +1,35 @@
 # bashcrawl
-Welcome!
+欢迎您！
 
-This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal.
+bashcrawl 是一款旨在启蒙 POSIX (Linux, BSD, UNIX) 终端入门操作的游戏。
 
-To start playing, open a terminal.
+要想开始游玩，请打开终端模拟器。
 
-Type the letters "cd " (just the letters, not the quotes) into the terminal...
+现在，在终端模拟器中输入 "cd"（只需输入字符，不要输入引号）
 
-Then a space (press the spacebar)...
+然后，输入一个空格（按一下空格键）
 
-Then drag and drop the ``entrance`` directory from this folder into your terminal.
+接着，把当前路径下的 ``entrance`` （意为“入口”）文件夹拖动到终端模拟器中。
 
-If your terminal asks you what you want to do with what you have just dragged into it, select "Paste location".
-If it doesn't ask, then expect it to paste the file path of the folder you just dragged into it.
+如果终端模拟器询问要对刚拖入的文件夹做什么，那就选择“粘贴路径”；
+如果没有询问，那它应该会粘贴上这个路径。
 
-Once you have something like:
+现在屏幕上应该会出现类似以下内容：
 
 ```
-$ cd /home/your_username/Downloads/bashcrawl/entrance
+$ cd /home/<用户名>/Download/bashcrawl/entrance
 ```
 
-in your terminal window, press RETURN.
-The exact path to the entrance varies, depending on where you saved the file.
+在终端模拟器窗口中，按下“回车”键。
+“入口”的实际路径不唯一，它取决于 bashcrawl 游戏的文件保存路径。
 
-Your first move is very important.
-Type this into your terminal:
+您的第一步移动至关重要。
+将以下内容输入终端模拟器：
 
 ```
 cat scroll
 ```
+（scroll 意为“卷轴”）
 
 
-This entire work was taken from: https://gitlab.com/slackermedia/bashcrawl
-Issues were fixed for this port.
+注：整部作品都来源于此处： https://gitlab.com/slackermedia/bashcrawl
