@@ -12,26 +12,20 @@
 # 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
 #
 #
-echo "Runes, the language of the ancient mystics that once ruled"
-echo "this land, are inscribed upon the western wall."
-echo "Do you want to read them?"
+echo "古代的神秘种族一度统治这片土地，他们的语言——符文，都刻在西边的墙上。"
+echo "要不要试着读一下？"
 read RESP
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "You recall the lessons of Caitlyn the Green,"
-   echo "who taught you these ancient letters."
+   echo "你回想起 Caitlyn the Green 教给你的古文。"
    printf "\n"
-   echo "The runes are instructions on how to summon"
-   echo "a portal that will allow you to walk through"
-   echo "an invisible door contained in the wall."
+   echo "这些符文描述了如何生成一扇传送门（portal），以此通过墙壁里的隐形门。"
    printf "\n"
-   echo "In Bash, a symlink is an *alias* or a *shortcut*"
-   echo "to another file or directory."
-   echo "Create one from this room to the adjacent one:"
+   echo "在 Bash 中，符号链接（软链接、symlink）是另一文件或目录的 *别名* （alias），或者说是 *快捷方式* （shortcut）。"
+   echo "就在这创建一扇通往附近房间的传送门："
    echo "ln -f -s `pwd`/../../../chapel/courtyard/aviary/hall portal"
    printf "\n"
 else
-   echo "You decide it is probably best to leave"
-   echo "magickal enscriptions as they are."
+   echo "你想还是尽早离开更好，毕竟墙上刻着的都是魔法符文啊。"
 fi
 
 
@@ -348,10 +342,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
+#
+# 试试这样：
 #
 # ./spell
 

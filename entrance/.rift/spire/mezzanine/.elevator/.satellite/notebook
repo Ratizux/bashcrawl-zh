@@ -1,37 +1,22 @@
-This is the notebook of Thraal, 
-Artificer of the Kingdom of Nor.  I have 
-been studying the machines that lie in 
-this Satellite.  I have a way to combine 
-the parts to form a golem, a *robot*, 
-using the same incantation that I use to 
-view signs and scrolls in my home world.  
-I have discovered that in order to bring 
-the robot to life I must utter the 
-following spell:
-
+这是 Thraal 的笔记本。我，Thraal，是 Nor 王国的一名发明家。我在这个卫星研究机
+器。我发现了一种释放咒语的方法，可以把这里的部件组装成傀儡——一台
+*机器人* （robot）。
+我发现，要想让机器人活化，必须释放这样的咒语：
 
 chmod +x robot
 
-I have labeled the four parts alpha, 
-beta, gamma, delta, but that is not the 
-order I must combine them.  I must pass 
-the combined parts into another spell 
-which I will document below.  The first 
-incantation I tried was thus:
+我把四个部件标为 alpha、beta、gamma 和 delta，但这个顺序并不能用来组装。
+部件的名字必须加在另一个咒语里面。我第一次试了这样的咒语：
 
 cat alpha beta gamma delta | base64 -d > robot
 
-...but that was met with the following error:  
+……但是这样就出现了下列错误：
 
-base64:  invalid input
+base64: 输入无效
 
-I will attempt every combination and 
-document the one that succeeds.  I
+我得把每种组合顺序都试一遍，然后把成功的那个记载下来。我
 
 alpha beta delta gamma 
 alpha delta bet
 
-There appears to be dried blood on the 
-notebook, and the rest of the pages are 
-blank.
-
+（笔记本上似乎有些已经干了的血。笔记本的其他页面都是空白的。）

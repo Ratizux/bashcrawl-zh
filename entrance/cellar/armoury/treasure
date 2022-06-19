@@ -13,17 +13,15 @@
 #
 #
 printf "\n"
-echo "You have found a gleaming silver **sword**!"
-echo "You marvel at its craftmanship, and you recall"
-echo "tales from your childhood of the great"
-echo "mystic king Rannismir who bore such a sword to"
-echo "protect the kingdom from undead."
+echo "你找到了一把闪闪发光的银制 **sword** （剑）！"
+echo "你对它精妙的制作惊叹不已，随之回想起儿时的传说，"
+echo "伟大而神秘的 Rannismir 国王持着这样一把剑，保护受亡灵围困的王国。"
 printf "\n"
-echo "Add this item to your inventory:"
+echo "把这件物品装入物品栏："
 printf "\n"
 echo "$ export I=sword,\$I"
 printf "\n"
-echo "Remember, you can check your inventory:"
+echo "别忘了这样查看物品栏："
 printf "\n"
 echo "echo \$I"
 printf "\n"
@@ -311,7 +309,7 @@ mv ../../.scrap ../../scrap 2>/dev/null
 
 
 
-# Hmm, that didn't work!
+# 唔，这样行不通啊！
 #
-# Maybe the scroll can provide a clue.
+# 读读卷轴，说不定能找到什么线索。
 

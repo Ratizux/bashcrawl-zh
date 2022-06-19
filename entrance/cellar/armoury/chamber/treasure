@@ -14,21 +14,19 @@
 #
 echo
 if ! grep -Po coins <<< $I &> /dev/null; then
-    echo "You have found a stash of **coins**!"
-    echo "They are old and worn with age,"
-    echo "but they still gleam in the magical light"
-    echo "emanating from your eyes."
+    echo "你找到了一把埋藏的 **硬币** （coin）！"
+    echo "随着时间的流逝，它们已严重磨损，但在你眼睛发出的魔光下，它们仍然熠熠生辉。"
     printf "\n"
-    echo "Prepend this item to your inventory:"
+    echo "把它们追加到物品栏中："
     printf "\n"
     echo '$ export I=coins,$I'
     printf "\n"
-    echo "Remember, you can check your inventory:"
+    echo "别忘了这样查看物品栏："
     printf "\n"
     echo 'echo $I'
     printf "\n"
 else
-    echo "This treasure has already been taken."
+    echo "宝藏已经被取走了。"
 fi
 
 
@@ -358,10 +356,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
+#
+# 试试这样：
 #
 # ./treasure
 

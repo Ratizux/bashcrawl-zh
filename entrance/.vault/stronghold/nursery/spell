@@ -13,23 +13,21 @@
 #
 #
 if [[ -e potion ]]; then
-   echo "You have summoned a potion from afar."
-   echo "You drink it quickly and feel a surge of strength."
-   echo "Add 5 HP to your score."
+   echo "你从远处召唤了一瓶药水。"
+   echo "你立刻喝了它，感受到了力量涌出身体。"
+   echo "增加 5 HP。"
 else
-   echo "A page from a druid's tome of incantations lies on the ground."
-   echo "It reveals to you how to summon a healing potion:"
+   echo "地上有一张德鲁伊咒语之书的书页。"
+   echo "它记载了召唤药水的方法："
    printf "\n"
-   echo "# To find a file on your system, use the find command."
-   echo '# For example, to search this room: find . -name "potion"'
-   echo "# Once you've found a potion, copy it to this directory"
-   echo "# and run this spell script again."
+   echo "# 要想寻找系统中的文件，可以使用“find”命令。"
+   echo '# 例如，搜索房间可以这样做： find . -name "potion"'
+   echo "# 一旦找到药水，就把它复制到这个目录，然后再运行一遍这个咒语脚本。"
    printf "\n"
-   echo "There are no potions in this room."
-   echo "But try searching starting at the entrance."
+   echo "这个房间里没有药水。"
+   echo "不过，你可以试试从入口开始搜索。"
    printf "\n"
-   echo "Hint: use pwd to determine how many rooms (folders)"
-   echo "are between you and the entrance."
+   echo "提示：用“pwd”命令确认你与入口相隔多少个房间（文件夹）。"
    printf "\n"
 fi
 
@@ -306,10 +304,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
+#
+# 试试这样：
 #
 # ./spell
 

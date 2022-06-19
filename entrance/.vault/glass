@@ -1,31 +1,31 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# 如果您在阅读这句话，您就已经跨越游戏本身的界限，
+# 而正在阅读着驱动游戏运行的代码了。
 #
-#                    Congratulations!
+#                              祝贺你！
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# 学习 Linux 完全是为了满足好奇心，您可以阅读一下这段代码，
+# 看看能不能搞清它的作用机理。
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
-echo "Do you have an ice crystal?"
+# 然而要是准备好继续游戏了，就要继续阅读卷轴（scroll）。如果在哪卡住了，
+# 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
+#
+#
+echo "你有水晶吗？"
 printf "\n"
 read RESP
 
 no_crystal () {
-   echo "You sense that the glass shards are searching for something."
-   echo "Whatever it is, you cannot provide it now."
-   echo "Walk with care."
+   echo "你感知到玻璃片在寻找着什么。"
+   echo "不管是啥，你还都没法确定。"
+   echo "还是小心为好。"
 }
 if [ $RESP = "y" -o $RESP = "Y" ]; then
     if grep -Po crystal <<< $I &> /dev/null; then
-        echo "You place the ice crystal among the shards of glass."
-        echo "The sword in your hands becomes cold."
-        echo "You feel the power of 1000 blizzards coursing through it."
+        echo "你把水晶放在玻璃片间。"
+        echo "你手中的剑突然变得非常凉。"
+        echo "你感受到了 1000 场暴雪穿梭的力量。"
         touch .bless
     else
         no_crystal
@@ -307,11 +307,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
+#
+# 试试这样：
 #
 # ./glass
 

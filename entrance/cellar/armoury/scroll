@@ -1,18 +1,17 @@
 
-# You can interact with items in the room (they end with a *)
-# by running them as a shell script.
+# 要想与房间里以“*”结尾的物品交互，
+# 可以以 shell 脚本（script）的方式运行它们。
 #
-# For example, to collect treasure:
+# 例如，这样收集宝藏：
 #
 # ./treasure
 # 
-# The . means *don't move*, and the name of the script makes the code run.
+# “.”代表 *不移动* ，之后的脚本名称指示机器运行相应代码。
 # 
-# You have left treasure in the previous room.
-# Go back to a previous directory with two dots,
-# which means *take a step back*.
+# 上个房间的宝藏可能被你落下了。
+# 用连续两个英文点号（“..”）返回上层目录，这两个点的意思就是 *后退一步* 。
 #
-# EXAMPLE:
+# 示例：
 #
 # cd ..
 

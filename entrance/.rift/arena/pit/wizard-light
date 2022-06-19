@@ -13,13 +13,11 @@
 #
 #
 if [ -e wizard-dark ]; then
-   echo "The ancient wizard, Arnnisen the Gray,"
-   echo "takes form before your very eyes. You"
-   echo "have freed him, and now he fights by"
-   echo "your side against the crawling chaos!"
+   echo "古代魔法师 Arnnisen the Gray 在你眼前出现了。"
+   echo "你把他解救了，所以他正在你身边与伏行之混沌作战！"
 else
-   echo "You feel a presence."
-   echo "It's probably just your imagination."
+   echo "你有种存在的实感。"
+   echo "这个大概是幻觉吧。"
 fi
 
 
@@ -294,16 +292,11 @@ fi
 
 
 
-
-# Hmm, that didn't work.
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
 #
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 试试这样：
 #
 # ./wizard-light
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F 
-
+# 要是没看到文件名后的“*”，搞不好是因为你忘记用 ls -F 了。

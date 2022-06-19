@@ -12,14 +12,13 @@
 # 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
 #
 #
-echo "A white crystal, forged by the Queen of Winter,"
-echo "lies on the frosty ground."
+echo "冬日女王打造的一块白色水晶躺在结霜的地面上。"
 printf "\n"
-echo "You can prepend this item to your inventory:"
+echo "把这件物品追加到物品栏："
 printf "\n"
 echo "$ export I=crystal,\$I"
 printf "\n"
-echo "Remember, you can check your inventory:"
+echo "这样可以查看物品栏："
 printf "\n"
 echo "echo \$I"
 printf "\n"
@@ -429,4 +428,4 @@ printf "\n"
 #
 
 #
-# Well that didn't work!
+# 额，这样行不通！

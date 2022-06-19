@@ -1,15 +1,13 @@
 
-# You seem to have reached the end of this hall.
+# 看样子你已经走到了长廊尽头。
 # 
-# Turn back and try another path.
+# 往回走，换条路试试吧。
 #
-# Remember, to back track one directory, you type:
+# 记住，回到上层目录只需要：
 #
 # cd ..
 #
-# If you are drawing a map of your progress,
-# you can always get the name of your working
-# directory with this command:
+# 如果要做张当前进度的示意图，可以用以下命令获取当前目录：
 # 
 # pwd
 

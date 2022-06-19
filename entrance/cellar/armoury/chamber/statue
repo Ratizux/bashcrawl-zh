@@ -14,8 +14,8 @@
 #
 
 gameover () {
-    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
-    echo "You find the following items on the corpse:  " >> corpse
+    echo "你在地牢地板上看到一具冒险者的尸体（corpse）。" > corpse
+    echo "尸体周围散落着这些物品：" >> corpse
     echo >> corpse
     echo $I >> corpse
     curr=`basename $PWD`
@@ -30,54 +30,52 @@ gameover () {
 }
 
 if [ "$0" = "./pieces" ]; then
-    echo "You sift through the pieces of a shattered statue."
+    echo "你在雕像碎片中翻找。"
     echo
-    echo "You find nothing of interest in the statue's remains."
+    echo "碎片中没什么有趣的东西。"
     exit 1
 fi
 
-echo "A rugged statue stands in the corner of the room."
-echo "Do you approach it?"
+echo "衣衫褴褛的雕像立在房间的角落里。"
+echo "走近看看吗？"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "The statue springs to life, rumbling:"
-   echo '"WHO DARES INTRUDE UPON THE CHAMBER OF SPIRITS?"'
+   echo "雕像活了，发出巨响："
+   echo '“是谁敢侵入神的房间？！”'
    printf "\n" 
-   echo "It thrusts a fist at you, hitting you for 5 damage."
-   echo "Deduct 5 from your HP variable:"
+   echo "雕像打了你一拳，造成 5 点伤害。"
+   echo "从 HP 变量中减去 5 ："
    echo 'let "HP=HP-5"'
    let HP=HP-5
    export HP
    if [ "$HP" -le 0 ]; then
-        echo "You have been slain by the statue."
+        echo "你被雕像杀害了。"
         echo
-        echo "GAME OVER!"
+        echo "游戏结束！"
         gameover
         exit 1
    fi
    sed -i 's/coins/diamonds/g' ./treasure
    printf "\n"
-   echo "Do you have a sword?"
+   echo "你有剑吗？"
    read RESP
    if [ $RESP = "y" -o $RESP = "Y" ]; then
        if grep -Po 'sword' <<< $I &> /dev/null; then
-           echo "You slay the statue!"
+           echo "你把雕像砍成了一堆碎片（piece）！"
            mv statue pieces
        else
            printf "\n"
-           echo "No you don't!"
-           echo 'Run!'
+           echo "不，你没有！"
+           echo '傻孩子，快跑啊！'
            rm treasure
            rm spell
       fi
    else
-       echo "Run!"
+       echo "傻孩子，快跑啊！"
    fi
 else
-    echo "You cautiously avoid the statue,"
-    echo "recalling stories of living stone"
-    echo "lying in wait, deep within haunted catacombs."
+    echo "你想起那些闹鬼墓穴里，活化的石头静静等待目标的故事，于是你小心避开了雕像。"
    printf "\n"
 fi
 
@@ -381,10 +379,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
+#
+# 试试这样：
 #
 # ./statue
 

@@ -13,18 +13,17 @@
 #
 #
 
-echo "You see a glowing red button with what appears to
-      be an arrow pointing down inscribed on its face."
+echo "你看到一个发红光的按钮，上面还刻着个往下指的箭头。"
 echo
-echo "Are you tempted to press the button?  y/n"
+echo "你想按一下看看吗？y/n"
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-    echo "The doors slide open, revealing a small chamber."
+    echo "电梯门打开了，出现了一个小室。"
     echo "DOWN" > ../.direction
     ln -sf .. door &> /dev/null && \
         sleep 10 && \
-        echo "The doors slide closed." && \
+        echo "电梯门关上了。" && \
         unlink door &
     echo
 fi
@@ -420,13 +419,12 @@ fi
 #
 #
 #
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
 #
-# ./box
+# 试试这样：
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F 
+# ./button
+#
+# 要是没看到文件名后的“*”，搞不好是因为你忘记用 ls -F 了。
 

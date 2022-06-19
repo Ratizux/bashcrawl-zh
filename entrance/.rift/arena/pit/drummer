@@ -13,15 +13,12 @@
 #
 #
 if [ -e drum ]; then
-   echo "War drums pound in the distance,"
-   echo "giving Nyarlathotep strength."
+   echo "远处的战鼓敲击，给予奈亚拉托提普力量。"
    printf "\n"
-   echo "If you know a spell to un-summon the drums,"
-   echo "Nyarlathotep would probably weaken!"
-   echo "Look up the *mv* command."
+   echo "如果你知道把鼓召唤走的魔咒，很可能就能弱化奈亚拉托提普！"
+   echo "看看 *mv* 命令吧。"
 else
-   echo "The drumming has stopped."
-   echo "Now's your chance to attack!"
+   echo "鼓已经停了，现在是攻击的好机会！"
 fi
 
 
@@ -297,15 +294,12 @@ fi
 
 
 
-# Hmm, that didn't work.
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
 #
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 试试这样：
 #
 # ./drummer
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F 
+# 要是没看到文件名后的“*”，搞不好是因为你忘记用 ls -F 了。
 

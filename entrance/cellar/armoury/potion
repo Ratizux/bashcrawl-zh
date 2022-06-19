@@ -12,30 +12,28 @@
 # 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
 #
 #
-echo "You have found a potion bottle of swirling"
-echo "green liquid. Do you want to drink it?"
+echo "你找到了一瓶打着旋的绿色液体。想喝喝看吗？"
 printf "\n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "The taste of a rustic green plant fills your mouth."
-   echo "It warms and strengthens you."
+   echo "朴实的绿色植物味道涌上舌尖。"
+   echo "这味道让你感到温暖不已，还让你变强了。"
    printf "\n" 
-   echo "Create a variable for your health points (HP)."
-   echo "You have 15 HP:"
+   echo "创建个存有血量值（HP）的变量。"
+   echo "你现在有 15 HP："
    echo "$ export HP=15"
    printf "\n"
 else
-   echo "You weren't born yestermorn;"
-   echo "this potion is probably poison."
+   echo "你早就不是小孩子了，你明白这药很可能有毒。"
    printf "\n"   
-   echo "Create a variable for your health points (HP)."
-   echo "You have 10 HP:"
+   echo "创建个存有血量值（HP）的变量。"
+   echo "你现在有 10 HP："
    echo "$ export HP=10"
    printf "\n"
 fi
 
-echo "You can check your health at any time:"
+echo "你随时可以这样查看血量："
 printf "\n"
 echo "echo \$HP"
 printf "\n"
@@ -318,10 +316,10 @@ mv ../../.scrap ../../scrap 2>/dev/null
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
+#
+# 试试这样：
 #
 # ./potion
 

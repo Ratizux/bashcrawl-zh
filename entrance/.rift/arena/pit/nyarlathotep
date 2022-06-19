@@ -13,7 +13,7 @@
 #
 #
 roll() {
-    echo "Enter a number."
+    echo "输入数字。"
     read NUM
     ALPHA=$RANDOM
     OMEGA=$RANDOM
@@ -30,8 +30,8 @@ roll() {
        let "MONSTER=MONSTER-2"
     fi
     
-    echo "The monster rolled " $MONSTER
-    echo "You rolled " $NUM
+    echo "奈亚拉托提普的数字是 " $MONSTER
+    echo "你的数字是 " $NUM
 
     if [[ -e wizard-dark && -e wizard-light ]]; then
 	let "NUM=NUM+2"
@@ -40,14 +40,14 @@ roll() {
 
 if [[ -e ../../.bless ]]; then
 	let "NUM=NUM+2"
-	echo "+2 POSIX wizard bonus!"
+	echo "+2 POSIX 法师加成！"
     fi
     resolve
 }
 
 gameover () {
-    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
-    echo "You find the following items on the corpse:  " >> corpse
+    echo "你在地牢地板上看到一具冒险者的尸体（corpse）。" > corpse
+    echo "尸体周围散落着这些物品：" >> corpse
     echo >> corpse
     echo $I >> corpse
     curr=`basename $PWD`
@@ -62,60 +62,59 @@ gameover () {
 }
 
 flee () {
-    echo "You turn to flee but find that you cannot."
-    echo "You spend 1000 years as a mindless servant to the crawling chaos."
-    echo "When you awaken, you may attempt to fight for your liberation."
+    echo "你想逃跑，但跑不了。"
+    echo "你要为伏行之混沌当 1000 年的无思想的卒。"
+    echo "醒来的时候再试着为自由而战吧。"
     printf "\n"
 
 }
 resolve() {
     if [[ $MONSTER -eq $NUM ]]; then
-	echo "You dodge an attack, but you miss your mark as a result."
-	echo "Roll again..."
+	echo "你躲过了奈亚拉托提普的攻击，但也没能打中目标。"
+	echo "再来一局……"
 	roll
     fi
     
     if [[ $MONSTER -lt $NUM ]]; then
-       echo "A hit! A palpable hit!"
-       echo "You have vanquished the elder god of chaos!"
+       echo "打中了！效果拔群！"
+       echo "你击败了混沌之古神！"
 
        echo '#!/bin/sh
        if ! grep -Po hair <<< $I &> /dev/null; then
-           echo "You have found a lock of the **hair** of a god!"
-           echo "Add it to your inventory."
+           echo "你发现了神的一绺 **头发** （hair）！"
+           echo "把它装入物品栏吧。"
        else 
-           echo "This treasure has already been taken."
+           echo "宝藏已经被取走了。"
        fi' > treasure
        chmod +x treasure
        echo '#!/bin/sh
        if ! grep -Po bracelet <<< $I &> /dev/null; then
-           echo "You have found an enchanted *bracelet* of chaotic necromancy!"
-           echo "Add it to your inventory." 
+           echo "你找到了一把混沌死灵法师的附魔 *手镯* （bracelet）！"
+           echo "把它装入物品栏吧。"
        else
-           echo "This treasure has already been taken."
+           echo "宝藏已经被取走了。"
        fi' > platinum
     chmod +x platinum
        cat << EOF > end 
-You have reached the end of the game. 
-You know enough Bash now to use it for every day activities.
-Practice makes perfect, so be sure to use it often.
-For continued Bash tips, visit opensource.com often.
-And eventually, we hope to see you contribute
-your own dungeon rooms to Bash crawl!
+看来您已经打到了游戏尽头。
+您已足以在日常中使用 bash。
+熟能生巧，您要保证经常用 bash。
+若是想要更多 bash 技巧，请常看看 opensource.com 。
+期待看到您向 bashcrawl 贡献自己设计的地牢房间！
 EOF
 
     else
-    	echo "Your sword swings harmlessly through the air."
-    	echo "You take 10 points damage from your foe. Deduct this from your HP."
+    	echo "你在空气中晃悠的打法造不成一点伤害。"
+    	echo "敌人对你造成了 10 点伤害，要从 HP 中减掉。"
     	echo 'let "HP=HP-10"'
         let HP=HP-10
         export HP
         if [ "$HP" -le 0 ]; then
-            echo "The elder god of chaos consumes your body and soul."
+            echo "混沌之古神榨干了你的身体和灵魂。"
             echo
-            echo "You have been slain."
+            echo "你被杀害了。"
             echo
-            echo "GAME OVER!"
+            echo "游戏结束！"
             gameover
             exit 1
         fi
@@ -124,10 +123,10 @@ EOF
     fi
 }
 
-echo "In the blink of an eye, Nyarlathotep is standing before you."
-echo "From its hands emanate black necrotic rays, and your mind screams."
+echo "一眨眼，奈亚拉托提普就已出现在你身后。"
+echo "它的手发射着黑色的坏死射线，你的意识在尖叫。"
 printf "\n"
-echo "Are you armed? y/n"
+echo "你有带武器吗？y/n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ];then
@@ -135,8 +134,8 @@ if [ $RESP = "y" -o $RESP = "Y" ];then
     if grep -Po "sword" <<< $I &> /dev/null; then
         roll
     else
-        echo "Oh, no!  You have lost your blade!"
-        echo "Nyarlathotep, the elder god of chaos, senses your weakness."
+        echo "哦不！你没有剑！"
+        echo "奈亚拉托提普——混沌之古神，察觉到了你的弱点。"
         echo
         flee
     fi
@@ -418,15 +417,12 @@ printf "\n"
 
 
 
-# Hmm, that didn't work.
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
 #
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 试试这样：
 #
 # ./nyarlathotep
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F 
+# 要是没看到文件名后的“*”，搞不好是因为你忘记用 ls -F 了。
 

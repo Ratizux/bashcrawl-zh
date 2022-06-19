@@ -13,29 +13,27 @@
 #
 #
 damage() {
-       echo "You try to resist, but you cannot."
-       echo "You dip your hand into the fountain,"
-       echo "and you feel your skin burning."
-       echo "The pain snaps you out of your trance"
-       echo "and you only suffer -2 HP."
+       echo "你尝试抵抗，可是没有成功。"
+       echo "你把手浸入喷泉，感觉皮肤好像在燃烧。"
+       echo "疼痛感把走神的你拉回了现实，你只受到了 2 点伤害。"
        printf "\n"
-       echo "Remember to deduct 2 points from your HP variable:"
+       echo "别忘了从 HP 变量中减去 2 。"
        echo '$ let "HP=HP-2"'
        printf "\n"
 }
 
 CURSE=`find .. -type f -name ".curse"`
 
-echo "Do you want to approach the fountain?"
+echo "想接近喷泉看看吗？"
 printf "\n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "The waters sparkle in the light of your gaze."
-   echo "You feel drawn to it."
+   echo "在你的注视下，喷泉里的水冒起来。"
+   echo "你被水拖住了。"
    if [ x$CURSE = "x" ]; then
-       echo "But you suddenly feel strength to turn away."
-       echo "You hear a sigh from the altar in the chapel."
+       echo "但你突然感受到了一股逃脱的力量。"
+       echo "教堂中的祭坛处传来了一声叹息。"
    else
        damage
    fi
@@ -452,4 +450,4 @@ fi
 #
 
 #
-# Well that didn't work!
+# 额，这样行不通！

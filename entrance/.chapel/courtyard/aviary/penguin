@@ -15,8 +15,8 @@
 
 
 gameover () {
-    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
-    echo "You find the following items on the corpse:  " >> corpse
+    echo "你在地牢地板上看到一具冒险者的尸体（corpse）。" > corpse
+    echo "尸体周围散落着这些物品：" >> corpse
     echo >> corpse
     echo $I >> corpse
     curr=`basename $PWD`
@@ -31,61 +31,54 @@ gameover () {
 }
 
 penguin_bite () {
-	echo "The penguin gnaws at your Bag of Holding, hoping for a morsel."
-	echo "Finding nothing, it takes a nip at your hand"
-	echo 'for 1 point of damage. (HP="let HP--").'
-	echo "You may avoid this damage if you have a sword"
-	echo "and wish to attack the penguin."
+	echo "企鹅咬着你的包，企图找到点吃的。"
+	echo '但是因为啥都没找到，它朝着你的手咬了一口，造成了 1 点伤害。（HP="let HP--"）'
+	echo "如果有剑的话，你大概可以避免这点伤害，还可以攻击企鹅。"
 	printf "\n"
-	echo "Do you want to attack the penguin?"
+	echo "要攻击企鹅吗？"
 	read RESP
 	if [ $RESP = "y" -o $RESP = "Y" ]; then
-	    echo "You attack the penguin, quickly doing away with it with one quick slash."
-	    echo "This draws the attention of the other penguins in the room."
-	    echo "They band together and rush at you. You fight your best."
+	    echo "你一击杀死企鹅，这引起了房间里其它企鹅的注意。"
+	    echo "它们一齐向你冲来。你全力作战。"
         let HP=HP-5
         export HP
         if [ "$HP" -le 0 ]; then
-            echo "The mob of penguins reduces your hit points to zero."
-            echo "You are slain by the mob."
+            echo "企鹅群把你的生命值打空了。"
+            echo "你被企鹅群杀害了。"
             gameover
             exit 1
         else
-	        echo "But a mob of penguins does not tolerate oppression, and you soon find yourself sealed in a block of ice."
-	        echo "There you stay, perfectly preserved for 128 years. When you are thawed, you may continue your adventure."
+	        echo "但一群企鹅可容忍不了什么欺压，你很快发现自己被冰封了。"
+	        echo "你被封存了 128 年，只能在这等了。等你化了冻，就能继续冒险了。"
         fi
 	else
         let HP=HP--
         export HP
-	    echo "You keep things in perspective, and do not lash out at the penguin."
+	    echo "你的价值观很端正，没有打企鹅。"
 	fi
 }
 
-echo "One of the birds finally notices your presence."
-echo "It turns its head sideways, seemingly beckoning"
-echo "for you to come closer."
+echo "终于有一只企鹅意识到了你的存在。"
+echo "它把头转到一边，好像在点头示意你靠近。"
 printf "\n"
-echo "Do you get closer?"
+echo "要走近一点吗？"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "You take a step forward, and the bird rushes"
-   echo "toward you, its mouth open wide."
-   echo "Do you happen to have a fish?"
+   echo "你向前一步，鸟类立刻挤到你身边，都大张着嘴。"
+   echo "你有鱼吗？"
    read RESP
 
     if [ $RESP = "y" -o $RESP = "Y" ]; then
         if grep -Po fish <<< $I; then
-            echo "You toss the fish at the penguin,"
-            echo "which catches the fish mid-air and"
-            echo "gobbles it down."
+            echo "你把鱼撂给企鹅，企鹅接住半空中的鱼，狼吞虎咽起来。"
             echo
-            echo "Don't forget to remove the fish from your inventory."
-            echo "Try the following command:"
+            echo "别忘了把鱼从物品栏中删除。"
+            echo "试试这行命令："
             echo 
             echo 'export I=`sed "s/fish//; s/,,/,/" <<< $I`'
         else
-            echo "You don't have a fish!"
+            echo "你没有鱼！"
             echo
             penguin_bite
         fi
@@ -94,8 +87,8 @@ if [ $RESP = "y" -o $RESP = "Y" ]; then
    fi
    
 else
-   echo "You back away from the penguin carefully."
-   echo "It loses interest in you and waddles away."
+   echo "你小心地离开企鹅群。"
+   echo "那只企鹅不再注意你，摇摇晃晃走开了。"
 fi
 #
 #
@@ -503,4 +496,4 @@ fi
 #
 
 #
-# Well that didn't work!
+# 额，这样行不通！

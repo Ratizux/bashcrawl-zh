@@ -12,28 +12,28 @@
 # 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
 #
 #
-echo "In the corner is a decaying old altar of some forgotten god."
+echo "角落里有个祭坛，应该属于某位被淡忘的神。"
 printf "\n"
-echo "There is a small trinket on the ground."
-echo "It looks religious in nature."
-echo "Do you want to put the trinket back on the altar?"
+echo "地面上有个小饰品（trinket）。"
+echo "这东西看起来应该和宗教有关。"
+echo "你要把饰品放回祭坛那里吗？"
 printf "\n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "You place the trinket upon the altar."
-   echo "You feel a gentle breeze pass through the room."
+   echo "你把饰品放在了祭坛处。"
+   echo "你感觉房间中有微风轻柔地吹过。"
    touch .bless
 else
-   echo "Do you want to take the trinket for yourself?"
+   echo "你要自己留着饰品吗？"
    read RESP
    if [ $RESP = "y" -o $RESP = "Y" ]; then
-       echo "Remember to add the trinket to your inventory!"
+       echo "别忘了把饰品放入物品栏！"
        touch .curse
    else
-   echo "You leave the trinket where it lies."
-   echo "There is a great sadness here."
-   echo "You feel compelled to move on."
+   echo "你把饰品留在原处。"
+   echo "你感到一阵悲伤。"
+   echo "你觉得现在得继续前行了。"
    touch .curse
    fi
 fi
@@ -311,16 +311,14 @@ fi
 
 
 
-# Hmm, that didn't work.
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
 #
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 试试这样：
 #
 # ./altar
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F 
+# 要是没看到文件名后的“*”，搞不好是因为你忘记用 ls -F 了。
+
 
 

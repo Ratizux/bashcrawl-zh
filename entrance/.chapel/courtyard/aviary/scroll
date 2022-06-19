@@ -1,18 +1,14 @@
 
-You enter a room that has been magically frost-bitten.
+你进入一间被魔法霜冻的房间。
 
-Snow and frost covers the ground, an icy pond leading perhaps
-to an underground lake or to the outside, is in the far corner.
+地上布满了雪与霜，远处的角落有个结冰的池塘，似乎通往地下河或是外界。
 
-A few small black and white birds waddle around the room,
-taking no notice of you.
+一些小个头黑白鸟类在房间里蹒跚行走，并没有注意到你。
 
-Tip:
-You can make your shell autocomplete the names of files and
-directories by pressing the Tab key after typing the first
-few letters.
+提示：
+输入前几个字母，再按下“制表（TAB）”键，就能让 shell 自动补全文件或目录的名称了。
 
-When you move to the next room, try typing
+要想进入下个房间，可以试下输入
 h
-and then press TAB.
+然后按 TAB 键。
 

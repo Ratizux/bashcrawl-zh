@@ -12,22 +12,19 @@
 # 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
 #
 #
-echo "There's a pile of old **rags**."
-echo "They are old and worn with age,"
-echo "and probably fell off of some poor adventurer."
+echo "这有一叠 **破布** （rag）。"
+echo "这布磨损严重，可能是从哪位贫穷的冒险者身上掉下来的。"
 printf "\n"
-echo "Do you want to take the rags?"
+echo "你要把破布拿走吗？"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ];then
-    echo "As you take the rags from the floor, you find"
-    echo "a salted fish, probably from the rations of"
-    echo "the former owner of these rags."
-    echo "Prepend these item to your inventory:"
+    echo "你刚把破布从地板上拎起来，就发现了一条咸鱼，这大概是破布旧主人的口粮吧。"
+    echo "把这些物品追加到物品栏中："
     printf "\n"
     echo "$ export I=rags,fish,\$I"
     printf "\n"
-    echo "Remember, you can check your inventory:"
+    echo "记住这样查看物品栏："
     printf "\n"
     echo "echo \$I"
     printf "\n"
@@ -438,4 +435,4 @@ fi
 #
 
 #
-# Well that didn't work!
+# 额，这样行不通！

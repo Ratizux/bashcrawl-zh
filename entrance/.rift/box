@@ -12,35 +12,32 @@
 # 就去 Gitlab 上的页面发一条 Issue。我们乐于提供提示。
 #
 #
-echo "A metal box sits upon the ground."
-echo "It appears to be illuminated from within."
-echo "There is a window in the box."
-echo "The window is black, but there is luminescent writing."
+echo "地上有个金属盒子。"
+echo "盒子里面好像发着光。"
+echo "盒子上有个窗口。"
+echo "这窗口是黑的，上面的字却发着光。"
 
-echo "Do you want to read the writing?"
+echo "要读读上面的字吗？"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
    echo ".--------------------------------,"
-   echo "|       Welcome to POSIX         |"
-   echo "|   Enter your username:         |"
+   echo "|         欢迎使用 POSIX         |"
+   echo "|         请输入用户名：         |"
    echo "'--------------------------------'"
    read RESP
    if [ $RESP = $USER ]; then
        echo '#!/bin/sh
-       echo "Welcome, $USER, to your POSIX system."
-       echo "You have learnt much, and now you have"
-       echo "the basic knowledge you need to become"
-       echo "a truly powerful wizard."
-       echo "You have found magickal armour."
-       echo "Add it to your inventory."
+       echo "$USER ，欢迎您使用 POSIX 系统。"
+       echo "您已学到了很多知识，已经有能力成为真正强力的。"
+       echo "您发现了一套魔法护甲（armour）。"
+       echo "请将它装入物品栏。"
        echo touch .armour' >> armour
        chmod +x armour
        touch .bless
     fi
 else
-   echo "The box is full of mystery, and it's often"
-   echo "best not to look too deeply into puzzles."
+   echo "这个盒子满是谜团，还是不要深入这些谜了。"
 fi
 
 
@@ -316,15 +313,13 @@ fi
 
 
 
-# Hmm, that didn't work.
+
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
 #
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 试试这样：
 #
 # ./box
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F 
+# 要是没看到文件名后的“*”，搞不好是因为你忘记用 ls -F 了。
 

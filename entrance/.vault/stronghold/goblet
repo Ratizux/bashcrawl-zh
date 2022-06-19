@@ -13,32 +13,29 @@
 #
 #
 if [[ -e goblet-light && -e goblet-dark ]]; then
-   echo "You have united the gobllet's ethereal forms."
-   echo "Add the goblet to your inventory."
+   echo "你已经统一了高脚杯先前无规则的形式。"
+   echo "现在把高脚杯放入物品栏吧。"
    exit
 else 
-    echo "You try to grasp the faintly glowing goblet,"
-    echo "but it passes through your fingers."
+    echo "你试着握住这只隐约发光的高脚杯，但它从你手指中穿过去了。"
 fi
 
 printf "\n"
-echo "Are you stuck? Do you need a hint? y/n"
+echo "遇到困难了吗？需要提示吗？y/n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
- echo "Try searching opensource.com for"
- echo "hints on how to copy files."
+ echo "试试在 opensource.com 上搜索复制文件的方法吧。"
  printf "\n"
- echo "Still stuck? Do you need the answer? y/n"
+ echo "仍然不行？需要答案吗？y/n"
  read RESP
 
  if [ $RESP = "y" -o $RESP = "Y" ]; then
-     echo "The cp command copies one file to another."
-     echo "Run this command:"
+     echo "cp 命令可以将一个文件复制成另一个。"
+     echo "运行一下这行命令："
      echo "$ cp goblet-light goblet-dark"
      printf "\n"
-     echo "And then run this goblet script again"
-     echo "for confirmation."
+     echo "然后再运行一下这个“高脚杯”脚本，确认一下。"
  fi
 fi
 
@@ -317,10 +314,10 @@ printf "\n"
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
+#
+# 试试这样：
 #
 # ./goblet
 

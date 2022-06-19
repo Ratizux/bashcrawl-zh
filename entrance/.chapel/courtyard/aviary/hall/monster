@@ -13,8 +13,8 @@
 #
 #
 gameover () {
-    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
-    echo "You find the following items on the corpse:  " >> corpse
+    echo "你在地牢地板上看到一具冒险者的尸体（corpse）。" > corpse
+    echo "尸体周围散落着这些物品：" >> corpse
     echo >> corpse
     echo $I >> corpse
     curr=`basename $PWD`
@@ -28,7 +28,7 @@ gameover () {
     $SHELL
 }
 roll() {
-    echo "Enter a number."
+    echo "输入数字。"
     read NUM
     ALPHA=$RANDOM
     OMEGA=$RANDOM
@@ -38,46 +38,46 @@ roll() {
     MONSTER=$RANDOM
     MONSTER=`echo $MONSTER | cut -b 1-2`
     NUM=`echo $NUM | cut -b 1-2`
-    echo "The monster rolled " $MONSTER
-    echo "You rolled " $NUM
+    echo "怪物的数字是 " $MONSTER
+    echo "你的数字是 " $NUM
     resolve
 }
 
 resolve() {
     if ! grep -Po 'sword' <<< $I &> /dev/null; then
-        echo "You do not have a sword!"
+        echo "你没有剑！"
         echo
-        echo "Your attacks will be less effective."
+        echo "你的攻击不会很有效。"
         let NUM=NUM-10
     fi
     if [[ $MONSTER -eq $NUM ]]; then
-	echo "You each parry one another's attacks."
-	echo "Roll again..."
+	echo "你们的攻击相抵。"
+	echo "再来一局……"
 	roll
     fi
     
     if [[ $MONSTER -lt $NUM ]]; then
-       echo "A hit! A palpable hit!"
-       echo "You have slain the beast."
+       echo "打中了！效果拔群！"
+       echo "你杀死了怪物。"
        echo '#!/bin/bash
              if ! grep -Po crown <<< $I &> /dev/null; then
-                 echo "You have found a *crown*!" 
-                 echo "Add it to your inventory."
+                 echo "你找到了一顶 *王冠* （crown）！"
+                 echo "把它放入物品栏吧。"
              else
-                 echo "This treasure has already been taken."
+                 echo "宝藏已经被取走了。"
             fi' > treasure
        chmod +x treasure
        mv monster carcass
     else
-	echo "Your attack is deflected off the monster's leathery flesh."
-	echo "You take 5 points damage. Deduct this from your HP."
+	echo "怪物坚硬的皮肉偏转了你的攻击。"
+	echo "你受到 5 点伤害，要从 HP 中减掉。"
 	echo 'let "HP=HP-5"'
     let HP=HP-5
     export HP
     if [ "$HP" -le 0 ]; then
-        echo "You have been slain by the monster."
+        echo "你被怪物杀害了。"
         echo 
-        echo "GAME OVER!"
+        echo "游戏结束！"
         gameover
         exit 1
     fi
@@ -87,25 +87,24 @@ resolve() {
 }
 
 if [ "$0" = "./carcass" ]; then
-    echo "You find the carcass of a foul beast."
+    echo "你发现了怪物脏兮兮的尸体。"
     echo 
-    echo "Nothing of interest lies within its remains."
+    echo "尸体里没什么有意思的东西。"
     exit 0
 fi
 
-echo "A hulking three-legged beast, with a mouth full of fangs"
-echo "and a barbed tail and 8 arms, lumbers toward you."
+echo "这有一只巨大的三条腿怪物，满嘴是尖牙、尾巴带刺、还长了八条胳膊，正向你走来。"
 printf "\n"
-echo "If you have a sword, you can attack."
-echo "Otherwise, you should run."
-echo "Do you want to attack? y/n"
+echo "如果你有剑，可以选择攻击。"
+echo "否则应该逃跑。"
+echo "要攻击吗？y/n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ];then
     roll
 else
-    echo "You wisely turn and flee."
-    echo "Quickly cd to the previous directory."
+    echo "你明智地转身逃跑了。"
+    echo "赶快 cd 进入上层目录。"
 fi
 printf "\n"
 #
@@ -514,4 +513,4 @@ printf "\n"
 #
 
 #
-# Well that didn't work!
+# 额，这样行不通！

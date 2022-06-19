@@ -61,40 +61,34 @@ countup () {
 }
 
 if grep UP .direction &> /dev/null; then
-    echo "You hear a slight whirring, and feel"
-    echo "a heaviness at your feet, with a vague,"
-    echo "disquieting sense of motion."
+    echo "你听到了微弱的呼呼声，感觉脚下一沉，有种令人不安的模糊的移动感。"
     echo
-    echo "A magickal display reads:  "
+    echo "魔法显示器上写着："
     echo
     countup
     echo
     echo
-    echo "The doors slide open, with nothing but"
-    echo "darkness beyond."
+    echo "电梯门打开了，眼前是一片黑暗。"
     echo "DOWN" > .direction
     ln -sf .satellite door && \
         sleep 10 && \
-        echo "The doors slide closed." && \
+        echo "电梯门关上了。" && \
         rm door &> /dev/null && \
         echo "DOWN" > .direction &
         echo
     else
-        echo "You hear a slight whirring, and feel"
-        echo "a lightness at your feet, with a vague,"
-        echo "disquieting sense of motion."
+        echo "你听到了微弱的呼呼声，感觉脚下一沉，有种令人不安的模糊的移动感。"
         echo
-        echo "A magickal display reads:  "
+        echo "魔法显示器上写着："
         echo
         countdown
         echo
         echo
         echo "UP" > .direction &
-        echo "The doors slide open, with nothing but"
-        echo "darkness beyond."
+        echo "电梯门打开了，眼前是一片黑暗。"
             sleep 10 && \
             ln -sf .. door && \
-            echo "The doors slide closed." && \
+            echo "电梯门关上了。" && \
             rm door &> /dev/null &
         echo
     fi
@@ -490,13 +484,12 @@ if grep UP .direction &> /dev/null; then
 #
 #
 #
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# 嗯，这样行不通。
+# 别忘了，以“*”结尾的是程序。
 #
-# ./box
+# 试试这样：
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F 
+# ./display
+#
+# 要是没看到文件名后的“*”，搞不好是因为你忘记用 ls -F 了。
 
