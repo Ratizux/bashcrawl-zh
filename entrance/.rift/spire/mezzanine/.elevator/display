@@ -86,8 +86,8 @@ if grep UP .direction &> /dev/null; then
         echo
         echo "UP" > .direction &
         echo "电梯门打开了，眼前是一片黑暗。"
-            sleep 10 && \
             ln -sf .. door && \
+            sleep 10 && \
             echo "电梯门关上了。" && \
             rm door &> /dev/null &
         echo

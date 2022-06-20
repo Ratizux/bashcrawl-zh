@@ -59,7 +59,7 @@ resolve() {
     if [[ $MONSTER -lt $NUM ]]; then
        echo "打中了！效果拔群！"
        echo "你杀死了邪恶魔法师的灵魂。"
-       echo '#!/bin/sh
+       echo '#!/bin/bash
             if ! grep -Po emerald <<< $I &> /dev/null; then
                 echo "你找到了一颗 *绿宝石* （emerald）！"
                 echo "把它装入物品栏吧。"

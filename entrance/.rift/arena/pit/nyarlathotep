@@ -79,7 +79,7 @@ resolve() {
        echo "打中了！效果拔群！"
        echo "你击败了混沌之古神！"
 
-       echo '#!/bin/sh
+       echo '#!/bin/bash
        if ! grep -Po hair <<< $I &> /dev/null; then
            echo "你发现了神的一绺 **头发** （hair）！"
            echo "把它装入物品栏吧。"
@@ -87,7 +87,7 @@ resolve() {
            echo "宝藏已经被取走了。"
        fi' > treasure
        chmod +x treasure
-       echo '#!/bin/sh
+       echo '#!/bin/bash
        if ! grep -Po bracelet <<< $I &> /dev/null; then
            echo "你找到了一把混沌死灵法师的附魔 *手镯* （bracelet）！"
            echo "把它装入物品栏吧。"

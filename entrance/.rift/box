@@ -27,7 +27,7 @@ if [ $RESP = "y" -o $RESP = "Y" ]; then
    echo "'--------------------------------'"
    read RESP
    if [ $RESP = $USER ]; then
-       echo '#!/bin/sh
+       echo '#!/bin/bash
        echo "$USER ，欢迎您使用 POSIX 系统。"
        echo "您已学到了很多知识，已经有能力成为真正强力的。"
        echo "您发现了一套魔法护甲（armour）。"
